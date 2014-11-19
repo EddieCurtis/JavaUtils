@@ -38,6 +38,8 @@ public class HashableKey <T> {
 	    			equal = true;
 		    		for (int i = 0; i < this.arguments.size(); i++) {
 		    			int nullCount = NullChecker.numberOfNullObjects(otherKey.arguments.get(i), this.arguments.get(i));
+		    			// If one of the objects is null then return false, if they are both null return true
+		    			// if neither are null then use equals()
 		    			if (nullCount == 1 || (nullCount == 0 && !otherKey.arguments.get(i).equals(this.arguments.get(i)))) {
 		    				equal = false;
 		    				break;
