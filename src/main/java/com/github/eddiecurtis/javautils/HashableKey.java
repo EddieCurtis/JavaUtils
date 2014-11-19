@@ -33,20 +33,15 @@ public class HashableKey <T> {
 	    if (obj != null && obj instanceof HashableKey<?>) {
 	    	equal = obj == this;
 	    	if (!equal) {
-	    		try {
-                    @SuppressWarnings("unchecked")
-                    HashableKey<T> otherKey = (HashableKey<T>) obj;
-		    		if (otherKey.arguments.size() == this.arguments.size()) {
-		    			equal = true;
-			    		for (int i = 0; i < this.arguments.size(); i++) {
-			    			if (!otherKey.arguments.get(i).equals(this.arguments.get(i))) {
-			    				equal = false;
-			    				break;
-			    			}
-			    		}
+                HashableKey<?> otherKey = (HashableKey<?>) obj;
+	    		if (otherKey.arguments.size() == this.arguments.size()) {
+	    			equal = true;
+		    		for (int i = 0; i < this.arguments.size(); i++) {
+		    			if (!otherKey.arguments.get(i).equals(this.arguments.get(i))) {
+		    				equal = false;
+		    				break;
+		    			}
 		    		}
-	    		} catch (ClassCastException e) {
-	    			equal = false;
 	    		}
 	    	}
 	    }
@@ -61,4 +56,5 @@ public class HashableKey <T> {
 		}
 		return hashCodeBuilder.toHashCode();
 	}
+	
 }
