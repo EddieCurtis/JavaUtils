@@ -15,7 +15,7 @@ import org.apache.commons.lang3.builder.HashCodeBuilder;
  */
 public class HashableKey <T> {
 
-	private List<T> arguments;
+	private final List<T> arguments;
 	
 	public HashableKey(T... args) {
 		arguments = Arrays.asList(args);
