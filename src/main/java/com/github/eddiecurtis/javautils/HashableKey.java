@@ -37,7 +37,8 @@ public class HashableKey <T> {
 	    		if (otherKey.arguments.size() == this.arguments.size()) {
 	    			equal = true;
 		    		for (int i = 0; i < this.arguments.size(); i++) {
-		    			if (!otherKey.arguments.get(i).equals(this.arguments.get(i))) {
+		    			int nullCount = NullChecker.numberOfNullObjects(otherKey.arguments.get(i), this.arguments.get(i));
+		    			if (nullCount == 1 || (nullCount == 0 && !otherKey.arguments.get(i).equals(this.arguments.get(i)))) {
 		    				equal = false;
 		    				break;
 		    			}
@@ -55,6 +56,5 @@ public class HashableKey <T> {
 			hashCodeBuilder.append(arg);
 		}
 		return hashCodeBuilder.toHashCode();
-	}
-	
+	}	
 }
