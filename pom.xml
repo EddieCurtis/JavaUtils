@@ -4,10 +4,11 @@
 
 	<groupId>com.github.eddiecurtis</groupId>
 	<artifactId>JavaUtils</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<packaging>jar</packaging>
 
 	<name>JavaUtils</name>
+	<description>A collection of classes containing utility methods to be used in Java code.</description>
 	<url>http://maven.apache.org</url>
 
 	<licenses>
@@ -18,7 +19,16 @@
 		</license>
 	</licenses>
 
+	<developers>
+		<developer>
+			<name>Edward Curtis</name>
+			<email>e.j.curtis1@gmail.com</email>
+		</developer>
+	</developers>
+
 	<scm>
+		<connection>scm:git:git@github.com:EddieCurtis/JavaUtils.git</connection>
+		<developerConnection>scm:git:git@github.com:EddieCurtis/JavaUtils.git</developerConnection>
 		<url>https://github.com/EddieCurtis/JavaUtils.git</url>
 	</scm>
 
